@@ -1,6 +1,6 @@
 Name:           perl-CGI-Session
 Version:        4.35
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Persistent session data in CGI applications
 License:        GPL+ or Artistic
 Group:          Development/Libraries
@@ -9,7 +9,34 @@ Source0:        http://www.cpan.org/modules/by-module/CGI/CGI-Session-%{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
-BuildRequires:	perl(FreezeThaw), perl(ExtUtils::MakeMaker), perl(Test::More)
+BuildRequires:  perl
+BuildRequires:  perl(base)
+BuildRequires:  perl(Carp)
+BuildRequires:  perl(CGI)
+BuildRequires:  perl(Class::Struct)
+BuildRequires:  perl(Data::Dumper)
+BuildRequires:  perl(DB_File)
+BuildRequires:  perl(DBD::Pg)
+BuildRequires:  perl(DBI)
+BuildRequires:  perl(diagnostics)
+BuildRequires:  perl(Digest::MD5)
+BuildRequires:  perl(Env)
+BuildRequires:  perl(ExtUtils::MakeMaker)
+BuildRequires:  perl(Fcntl)
+BuildRequires:  perl(File::Basename)
+BuildRequires:  perl(File::Path)
+BuildRequires:  perl(File::Spec)
+BuildRequires:  perl(FreezeThaw)
+BuildRequires:  perl(lib)
+BuildRequires:  perl(overload)
+BuildRequires:  perl(Safe)
+BuildRequires:  perl(Scalar::Util)
+BuildRequires:  perl(Storable)
+BuildRequires:  perl(strict)
+BuildRequires:  perl(Test::More)
+BuildRequires:  perl(Text::Abbrev)
+BuildRequires:  perl(Text::Wrap)
+BuildRequires:  perl(vars)
 
 %description
 CGI-Session is a Perl5 library that provides an easy, reliable and modular
@@ -49,6 +76,9 @@ rm -rf %{buildroot}
 %{_mandir}/man3/*
 
 %changelog
+* Thu May 09 2013 Petr Šabata <contyk@redhat.com> - 4.35-6
+- Correct build-time dependencies (#657359)
+
 * Fri Apr 30 2010 Marcela Mašláňová <mmaslano@redhat.com> - 4.35-5
 - add package into RHEL-6
 - Resolves: rhbz#463667
