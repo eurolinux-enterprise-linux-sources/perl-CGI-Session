@@ -1,6 +1,6 @@
 Name:           perl-CGI-Session
 Version:        4.35
-Release:        15%{?dist}
+Release:        16%{?dist}
 Summary:        Persistent session data in CGI applications
 License:        GPL+ or Artistic
 Group:          Development/Libraries
@@ -83,6 +83,9 @@ rm -rf %{buildroot}
 %{_mandir}/man3/*
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.35-16
+- Mass rebuild 2013-12-27
+
 * Mon Sep  9 2013 Petr Pisar <ppisar@redhat.com> - 4.35-15
 - Specify all dependencies
 
